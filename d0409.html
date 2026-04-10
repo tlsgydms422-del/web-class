@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d0409</title>
+</head>
+<body>
+    <table border="1" style="border-collapse:collapse; width:100%; text-align:center">
+        <caption>매점 인기 간식</caption>
+        <thead>
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>남은 수량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>핫도그</td>
+                <td>2000원</td>
+                <td>12개</td>
+            </tr>
+            <tr>
+                <td>주스</td>
+                <td>1500원</td>
+                <td>8개</td>
+            </tr>
+        </table>
+     <table border="1" style="border-collapse:collapse;  width:100%; text-align:center">
+        <caption>금요일 동아리 활동표</caption>
+    <tr>
+        <th>시간</th>
+        <th>1교시</th>
+        <th>2교시</th>
+        <th>3교시</th>
+    </tr>
+    <tr>
+        <th>활동</th>
+        <td>기획회의</td>
+        <td colspan="2">영상 촬영</td>
+    </tr>
+    <tr>
+        <th>준비물</th>
+        <td>노트북</td>
+        <td>카메라</td>
+        <td>삼각대</td>
+    </tr>
+</table>
+</body>
+<form>
+     <p>
+    <label for="student">이름</label><br>
+    <input type="text" id="student" placeholder="이름 입력">
+  </p>
+  <p>
+    <label for="day">희망 날짜</label><br>
+    <input type="date" id="day">
+  </p>
+  <p>
+    <label for="topic">상담 주제</label><br>
+    <select id="topic">
+      <option>진로</option>
+      <option>프로젝트</option>
+      <option>자격증</option>
+    </select>
+  </p>
+   <p>
+    <label for="memo">미리 전할 말</label><br>
+    <textarea id="memo" rows="4" cols="30" placeholder="궁금한 점을 적어보세요."></textarea>
+  </p>
+<button type="submit">신청하기</button>
+</form>
+
+<form>
+    <fieldset>
+        <legend>기본정보</legend>
+        <p>
+        <label for="name">이름</label><br>
+        <input type="text" id="name">
+        </p>
+        <p>
+        <label for="grade">학년</label><br>
+        <select id="grade">
+            <option>1학년</option>
+        <option>2학년</option>
+        <option>3학년</option>
+        </select>
+        </p>
+    </fieldset>
+    <fieldset>
+        <legend>희망 활동</legend>
+        <p>
+             <label><input type="radio" name="club"> 방송부</label><br>
+      <label><input type="radio" name="club"> 코딩부</label><br>
+      <label><input type="radio" name="club"> 디자인부</label>
+        </p>
+        <p>
+             <label><input type="checkbox"> 방과 후 참여 가능</label><br>
+      <label><input type="checkbox"> 주말 행사 참여 가능</label>
+        </p>
+    </fieldset>
+    <button type="submit">동아리 신청 완료</button>
+</form>
+
+</html>
