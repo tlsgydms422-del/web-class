@@ -6,224 +6,213 @@
     <title>Document</title>
 </head>
 <body>
-    
-</body>
-</html>
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>/*
- /*STEP 1. 페이지 전체 기본 스타일 */
-/* 배경색, 기본 글자색, 글꼴, 여백 초기화
-*/
-body {
-  background-color: blue; 
-   color: 0c1a2e; 
-   font-family: 'Noto Sans KR', sans-serif; 
-  margin: 0; 
-   padding: 0; 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>민혁국밥</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body{margin:0;font-family:'Noto Sans KR',sans-serif;background:#fffaf3;color:#3e2c23;}
+header{background:linear-gradient(135deg,#a65a2a,#d98c4c);color:#fff;text-align:center;padding:60px 20px;}
+header h1{font-family:'Noto Serif KR',serif;font-size:36px;margin:0;}
+header p{margin-top:10px;font-size:16px;}
+
+nav{display:flex;justify-content:center;gap:20px;padding:15px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.05);} 
+nav a{text-decoration:none;color:#5a3d2b;font-weight:500;}
+
+section{padding:50px 20px;max-width:900px;margin:auto;}
+.card{background:#fff;border-radius:20px;padding:25px;margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);} 
+
+h2{font-family:'Noto Serif KR',serif;margin-bottom:15px;}
+
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.menu-item{
+background:#fff8f0;
+border-radius:20px;
+padding:20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+transition:0.2s;
+}
+.menu-item:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/*
-STEP 2. 전체 내용을 감싸는 박스 */
-/*가운데 정렬 + 최대 너비
-*/
-#wrapper {
-   max-width: 680px; 
-   margin: 48px auto;
-  padding: 0 20px; 
+.emoji{font-size:40px;position:relative;display:inline-block;}
+.price{margin-top:5px;font-weight:500;color:#7a4b2c;}
+
+.badge{position:absolute;top:10px;right:10px;background:#a65a2a;color:#fff;padding:5px 10px;border-radius:12px;font-size:12px;}
+.popular{position:absolute;bottom:10px;left:10px;background:#ff7a00;color:#fff;padding:4px 8px;border-radius:10px;font-size:11px;}
+
+.order-btn{
+margin-top:10px;
+padding:6px 14px;
+border-radius:20px;
+background:#5a3d2b;
+color:#fff;
+border:none;
+font-size:12px;
+cursor:pointer;
 }
 
-/* STEP 3. 맨 위 소개 박스 */
-.header {
-  background-color: #1d4ed8; 
-   border-radius: 16px; 
-  padding: 40px 32px; 
-   text-align: center; 
-   margin-bottom: 20px; 
-}
+.highlight{background:#ffe8cc;padding:20px;border-radius:20px;font-size:16px;line-height:1.6;text-align:center;}
 
-/* STEP 4. 이모지 크게 만들기 */
-.avatar-emoji {
-  font-size: 72px;
-  display: block; 
-   margin-bottom: 12px; 
-}
+.review{background:#fff;border-radius:15px;padding:15px;margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,0.05);position:relative;}
+.review strong{display:block;margin-bottom:5px;}
+.stars{color:#ffb400;font-size:18px;margin-top:5px;}
+.best{position:absolute;top:10px;left:10px;background:#ffb400;color:#fff;padding:3px 8px;border-radius:10px;font-size:12px;}
 
-/* STEP 5. 헤더 안 제목 */
-.header h1 {
-   font-family: 'Black Han Sans', sans-serif; 
-   font-size: 30px; 
-   color: #ffffff; 
-   margin-bottom: 6px;
-}
+.rating-summary{text-align:center;font-size:20px;margin-bottom:20px;}
 
-/* STEP 6. 헤더 안 소개글 */
-.header p {
-  font-size: 14px; 
-   color: #bfdbfe; 
-   line-height: 1.7; 
-}
+footer{background:#5a3d2b;color:#fff;text-align:center;padding:30px 20px;font-size:14px;}
 
-/* STEP 7. 카드 공통 스타일 */
-.card {
-   background-color: #ffffff; 
-   border: 1px solid #bfdbfe; 
-   border-top: 4px solid #1d4ed8; 
-   border-radius: 12px; 
-  padding: 24px; 
-   margin-bottom: 16px; 
-}
+/* 김 애니메이션 */
+.emoji::before,.emoji::after,.emoji span,.emoji i{
+content:'';position:absolute;bottom:35px;width:6px;height:25px;background:rgba(255,255,255,0.85);border-radius:50%;animation:steam 2.5s infinite ease-in-out;}
+.emoji::before{left:50%;}
+.emoji::after{left:60%;animation-delay:1s;}
+.emoji span{left:40%;animation-delay:0.5s;}
+.emoji i{left:55%;animation-delay:1.5s;}
+@keyframes steam{
+0%{opacity:0;transform:translateX(-50%) translateY(0);} 
+50%{opacity:1;transform:translateX(-40%) translateY(-25px);} 
+100%{opacity:0;transform:translateX(-60%) translateY(-50px);} }
 
-/* STEP 8. 카드 제목 스타일 */
-.card h2 {
-  font-family: 'Black Han Sans', sans-serif; 
-   font-size: 17px;
-   color: #1d4ed8; 
-   margin-bottom: 14px; 
-   padding-bottom: 10px; 
-   border-bottom: 1px solid #dbeafe; 
-}
-
-/* STEP 9. 카드 안 기본 문단 */
-.card p {
-  /* font-size: 14px; */
-  /* line-height: 1.9; */
-  /* color: #374151; */
-}
-
-/* STEP 10. 기본 정보 한 줄씩 꾸미기 */
-.info-row {
-  padding: 10px 0; 
-   border-bottom: 1px solid #eff6ff; 
-   font-size: 14px; 
-  color: #374151; 
-}
-
-.info-row:last-child {
-  /* border-bottom: none; */
-}
-
-.info-label {
-  /* font-weight: 700; */
-  /* color: #1d4ed8; */
-  /* margin-right: 8px; */
-}
-
-/* STEP 11. 기술 태그를 알약 모양으로 */
-.tag {
-   display: inline-block; 
-   background-color: #dbeafe; 
-   color: #1d4ed8; 
-   font-size: 12px; 
-  font-weight: 700; 
-   padding: 4px 12px; 
-   border-radius: 20px; 
-   border: 1px solid #bfdbfe; 
-   margin: 0 6px 8px 0; 
-}
-
-/* STEP 12. 좋아하는 것 목록 */
-.styled-list {
-   padding-left: 20px; 
-   margin: 8px 0; 
-}
-
-.styled-list li {*/
-   font-size: 14px; 
-  line-height: 2; 
-  color: #374151; 
-}
-
-.styled-list li::marker { */
-  /* color: #1d4ed8; */
-}
-
-/* STEP 13. 링크를 버튼처럼 */
-.link-btn {
-  display: block; 
-   background-color: #eff6ff; 
-   color: #1d4ed8; 
-   text-decoration: none; 
-   font-size: 14px; 
-   font-weight: 700; 
-   padding: 12px 18px; 
-   border-radius: 10px; 
-  border: 1.5px solid #bfdbfe; 
-  margin-bottom: 10px; 
-}
-
-/* STEP 14. 맨 아래 푸터 */
-#footer {
-  text-align: center; 
-  font-size: 12px; 
-   color: #93c5fd;
-   padding: 24px 0 48px; 
-}</style>
+@media(max-width:600px){header h1{font-size:28px;}}
+</style>
 </head>
 <body>
 
-<div id="wrapper">
-  <div class="header">
-    <span class="avatar-emoji">🙋</span>
-    <h1>권민혁</h1>
-    <p>대창고등학교 3학년<br>HTML과 CSS를 배우고 있어요 👨‍💻</p>
-  </div>
+<header>
+  <h1>🍲 민혁국밥</h1>
+  <p>따뜻한 한 그릇, 마음까지 든든하게</p>
+</header>
 
-  <div class="card">
-    <h2>📋 기본 정보</h2>
-    <div class="info-row"><span class="info-label">이름</span>권민혁</div>
-    <div class="info-row"><span class="info-label">학교</span>예천 대창고등학교</div>
-    <div class="info-row"><span class="info-label">학년</span>3학년</div>
-    <div class="info-row"><span class="info-label">관심 분야</span>AI개발, UI 디자인</div>
-    <div class="info-row"><span class="info-label">GitHub</span><a href="https://github.com/내아이디">github.com/내아이디</a></div>
-  </div>
+<nav>
+  <a href="#about">소개</a>
+  <a href="#menu">메뉴</a>
+  <a href="#greeting">인사말</a>
+  <a href="#review">리뷰</a>
+</nav>
 
+<section id="about">
   <div class="card">
-    <h2>👋 자기소개</h2>
-    <p>
-      안녕하세요! 웹개발에 관심이 생겨 HTML과 CSS를 공부하고 있는 권민혁입니다.<br>
-      처음에는 어렵게 느껴졌지만, 코드를 짜면서 눈앞에 결과물이 바로 나타나는 게
-      너무 재미있어서 열심히 배우고 있습니다.
-    </p>
+    <h2>가게 소개</h2>
+    <p>정성껏 끓인 국물과 신선한 재료로 만드는 따뜻한 한식당입니다.</p>
   </div>
+</section>
 
-  <div class="card">
-    <h2>❤️ 좋아하는 것들</h2>
-    <ul class="styled-list">
-      <li>음악 듣기 🎵</li>
-      <li>게임 하기 🎮</li>
-      <li>독서 하기 ☕</li>
-      <li>영화및 애니 보기 📺</li>
-    </ul>
+<section id="menu">
+  <h2>대표 메뉴</h2>
+  <div class="menu">
+
+    <div class="menu-item">
+      <div class="badge">오늘의 추천</div>
+      <div class="emoji">🍲<span></span><i></i></div>
+      <p>순대국밥</p>
+      <div class="price">₩9,000</div>
+      <button class="order-btn">주문하기</button>
+      <div class="popular">🔥 하루 120그릇</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="emoji">🥣<span></span><i></i></div>
+      <p>콩나물국밥</p>
+      <div class="price">₩8,000</div>
+      <button class="order-btn">주문하기</button>
+      <div class="popular">🔥 해장 인기</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="emoji">🍖<span></span><i></i></div>
+      <p>뼈해장국</p>
+      <div class="price">₩10,000</div>
+      <button class="order-btn">주문하기</button>
+    </div>
+
+    <div class="menu-item">
+      <div class="emoji">🥩<span></span><i></i></div>
+      <p>얼큰 고기국밥</p>
+      <div class="price">₩10,000</div>
+      <button class="order-btn">주문하기</button>
+      <div class="popular">🔥 매운맛 인기</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="emoji">🧄<span></span><i></i></div>
+      <p>마늘 고기국밥</p>
+      <div class="price">₩9,800</div>
+      <button class="order-btn">주문하기</button>
+    </div>
+
+    <div class="menu-item">
+      <div class="emoji">🦐<span></span><i></i></div>
+      <p>해물국밥</p>
+      <div class="price">₩10,500</div>
+      <button class="order-btn">주문하기</button>
+    </div>
+
   </div>
+</section>
 
+<section id="greeting">
   <div class="card">
-    <h2>💻 배우고 있는 기술</h2>
-    <div>
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">Flexbox</span>
-      <span class="tag">GitHub</span>
-      <span class="tag">VS Code</span>
+    <h2>사장님 한마디</h2>
+    <div class="highlight">
+      "혼밥 환영합니다 😊 언제든 편하게 오셔서 따뜻한 한 끼 드세요!"
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>🔗 링크</h2>
-    <a class="link-btn" href="https://github.com/내아이디" target="_blank">🐙 GitHub 프로필 보기</a>
-    <a class="link-btn" href="https://내아이디.github.io/web-class" target="_blank">🌐 내 웹페이지 보기</a>
+<section id="review">
+  <h2>단골 리뷰</h2>
+  <div class="rating-summary">⭐ 평균 평점 4.8 / 5 (리뷰 128개)</div>
+
+  <div class="review">
+    <div class="best">추천 많음</div>
+    <strong>👍 단골손님</strong>
+    국물 진짜 깊고 맛있어요!
+    <div class="stars">⭐⭐⭐⭐⭐</div>
   </div>
-</div>
 
-<div id="footer">
-  이 페이지는 HTML과 CSS로 만들었습니다 🎨<br>
-  Made by 권민혁
-</div>
+  <div class="review">
+    <strong>😊 직장인</strong>
+    점심마다 오는 집입니다.
+    <div class="stars">⭐⭐⭐⭐</div>
+  </div>
+
+  <div class="review">
+    <strong>🔥 학생</strong>
+    가성비 미쳤어요, 양도 많고 최고
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+  </div>
+
+  <div class="review">
+    <strong>🍲 단골</strong>
+    해장할 때 무조건 여기 옵니다
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+  </div>
+
+</section>
+
+<section style="text-align:center;">
+  <button onclick="alert('전화 문의: 010-0000-0000')">문의하기</button>
+</section>
+
+<footer>
+  <p>📍 주소: 대구광역시</p>
+  <p>⏰ 영업시간: 09:00 - 22:00</p>
+  <p>📞 전화번호: 010-0000-0000</p>
+</footer>
+
+</body>
+</html>
+
 </body>
 </html>
